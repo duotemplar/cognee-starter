@@ -38,34 +38,35 @@ async def main():
     # print(f"Graphistry URL: {url}")
 
     # Or use our simple graph preview
-    graph_file_path = str(
-        pathlib.Path(
-            os.path.join(pathlib.Path(__file__).parent, ".artifacts/graph_visualization.html")
-        ).resolve()
-    )
-    await visualize_graph(graph_file_path)
+    #graph_file_path = str(
+        #pathlib.Path(
+            #os.path.join(pathlib.Path(__file__).parent, ".artifacts/graph_visualization.html")
+        #).resolve()
+    #)
+    #await visualize_graph(graph_file_path)
 
     # Completion query that uses graph data to form context.
-    graph_completion = await search(query_text="What is python?", query_type=SearchType.GRAPH_COMPLETION)
-    print("Graph completion result is:")
-    print(graph_completion)
+    #graph_completion = await search(query_text="What is python?", query_type=SearchType.GRAPH_COMPLETION)
+    #print("Graph completion result is:")
+    #print(graph_completion)
 
     # Completion query that uses document chunks to form context.
-    completion = await search(query_text="What is Python?", query_type=SearchType.COMPLETION)
-    print("Completion result is:")
-    print(completion)
+    #completion = await search(query_text="What is Python?", query_type=SearchType.COMPLETION)
+    #print("Completion result is:")
+    #print(completion)
 
     # Query all summaries related to query.
-    summaries = await search(query_text="Python", query_type=SearchType.SUMMARIES)
-    print("Summary results are:")
-    for summary in summaries:
-        print(summary)
+    #summaries = await search(query_text="Python", query_type=SearchType.SUMMARIES)
+    #print("Summary results are:")
+    #for summary in summaries:
+        #print(summary)
 
+    """
     chunks = await search(query_text="Python", query_type=SearchType.CHUNKS)
     print("Chunk results are:")
     for chunk in chunks:
         print(chunk)
-
+    """
 
 if __name__ == "__main__":
     asyncio.run(main())
