@@ -30,6 +30,7 @@ async def main():
     # Add the text data to Cognee.
     await add(text)
 
+    print("!!!!!!!!cognify beginning")
     # Cognify the text data.
     await cognify()
 
@@ -37,6 +38,7 @@ async def main():
     # url = await render_graph()
     # print(f"Graphistry URL: {url}")
 
+    print("!!!!!!!!Graph data has begin.")
     # Or use our simple graph preview
     graph_file_path = str(
         pathlib.Path(
@@ -44,7 +46,7 @@ async def main():
         ).resolve()
     )
     await visualize_graph(graph_file_path)
-
+    print("!!!!!!!!Graph data has been generated.")
     # Completion query that uses graph data to form context.
     graph_completion = await search(query_text="What is python?", query_type=SearchType.GRAPH_COMPLETION)
     print("Graph completion result is:")
